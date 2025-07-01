@@ -8,6 +8,8 @@ public class Photo {
     @NotEmpty
     private String fileName;
 
+    private byte[] file;
+
     public Photo() {
     }
 
@@ -17,6 +19,15 @@ public class Photo {
     }
 
     //raw data
+
+    public byte[] getFile() {
+        return file;
+    }
+
+    public void setFile(byte[] file) {
+        this.file = file;
+    }
+
     public String getId() {
         return id;
     }
