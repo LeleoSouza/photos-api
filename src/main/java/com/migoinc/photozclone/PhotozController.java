@@ -14,10 +14,11 @@ import java.util.UUID;
 
 @RestController
 public class PhotozController {
+    private final PhotoService photoService;
 
-    private final Map<String, Photo> db = new HashMap<>(){{
-        put("1", new Photo("1", "hello.jpg"));
-    }};
+    public PhotozController(PhotoService photoService) {
+        this.photoService = photoService;
+    }
 
     @GetMapping("/")
     public String hello() {
@@ -25,12 +26,12 @@ public class PhotozController {
     }
     @GetMapping("/photoz")
     public Collection<Photo> get(){
-        return db.values();
+        return photoService.values();
     }
 
     @GetMapping("/photoz/{id}")
     public Photo get(@PathVariable String id){
-        Photo photo = db.get(id);
+        Photo photo = photoService.get(id);
         if(photo == null){
             throw  new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
@@ -39,7 +40,7 @@ public class PhotozController {
 
     @DeleteMapping("/photoz/{id}")
     public void delete(@PathVariable String id){
-        Photo photo = db.remove(id);
+        Photo photo = photoService.remove(id);
         if(photo == null){
             throw  new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
@@ -51,7 +52,7 @@ public class PhotozController {
         photo.setId(UUID.randomUUID().toString());
         photo.setFileName(file.getOriginalFilename());
         photo.setFile(file.getBytes());
-        db.put(photo.getId(), photo);
+        photoService.save(photo.getId(), photo);
         return photo;
     }
 }
