@@ -10,6 +10,8 @@ public class Photo {
 
     private byte[] file;
 
+    private String contentType;
+
     public Photo() {
     }
 
@@ -28,6 +30,12 @@ public class Photo {
         this.file = file;
     }
 
+    public String getContentType() {
+        return contentType;
+    }
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
     public String getId() {
         return id;
     }
