@@ -1,6 +1,7 @@
-package com.migoinc.photozclone;
+package com.migoinc.photozclone.web;
 
-import jakarta.validation.Valid;
+import com.migoinc.photozclone.model.Photo;
+import com.migoinc.photozclone.services.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +10,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.io.IOException;
 import java.util.Collection;
-import java.util.UUID;
 
 @RestController
 public class PhotozController {

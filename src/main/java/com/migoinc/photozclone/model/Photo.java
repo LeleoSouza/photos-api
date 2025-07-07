@@ -1,4 +1,4 @@
-package com.migoinc.photozclone;
+package com.migoinc.photozclone.model;
 
 import jakarta.validation.constraints.NotEmpty;
 

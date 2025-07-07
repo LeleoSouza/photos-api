@@ -1,5 +1,6 @@
-package com.migoinc.photozclone;
+package com.migoinc.photozclone.services;
 
+import com.migoinc.photozclone.model.Photo;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

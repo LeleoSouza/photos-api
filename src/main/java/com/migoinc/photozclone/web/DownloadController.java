@@ -1,5 +1,7 @@
-package com.migoinc.photozclone;
+package com.migoinc.photozclone.web;
 
+import com.migoinc.photozclone.model.Photo;
+import com.migoinc.photozclone.services.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.GetMapping;
